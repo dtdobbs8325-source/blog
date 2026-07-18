@@ -1,9 +1,6 @@
 // Checks if you are running locally; if not, points to your future Render server
-const API_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
-    ? 'http://localhost:3000/api/posts'
-    : 'https://blog-righ.onrender.com'; 
-
-const API_URL = '/api/posts';
+const API_URL = 'https://https://blog-righ.onrender.com/api/posts';
+// const API_URL = '/api/posts';
 const postForm = document.getElementById('post-form');
 const blogContainer = document.getElementById('blog-container');
 
