@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Local JSON Blog</title>
+    <!-- Optional simple styling layout -->
+    <style>
+        body { font-family: sans-serif; max-width: 600px; margin: 40px auto; padding: 0 20px; line-height: 1.6; }
+        form { display: flex; flex-direction: column; gap: 10px; margin-bottom: 40px; padding: 20px; background: #f4f4f4; border-radius: 5px; }
+        input, textarea, button { padding: 10px; font-size: 1rem; }
+        textarea { height: 120px; resize: vertical; }
+        article { border-bottom: 1px solid #eee; padding: 20px 0; }
+        article h2 { margin-bottom: 5px; }
+        small { color: #666; }
+    </style>
+</head>
+<body>
+
+    <h1>My Local Blog</h1>
+
+    <!-- Form to create a new blog post -->
+    <form id="post-form">
+        <h3>Create a New Post</h3>
+        <input type="text" id="post-title" placeholder="Post Title" required>
+        <textarea id="post-content" placeholder="Write your content here..." required></textarea>
+        <button type="submit">Publish Post</button>
+    </form>
+
+    <hr>
+
+    <!-- Container where posts will be displayed -->
+    <div id="blog-container">
+        <p>Loading posts...</p>
+    </div>
+
+    <!-- Link our front-end JavaScript file -->
+    <script src="app.js"></script>
+</body>
+</html>
