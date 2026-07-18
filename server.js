@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors');
 const fs = require('fs');
 const path = require('path');
 const app = express();
@@ -8,7 +9,22 @@ const PORT = 3000;
 app.use(express.json());
 app.use(express.static('public')); // Puts your HTML/CSS/JS in a folder named 'public'
 
+// Allow your GitHub Pages frontend to securely communicate with this server
+app.use(cors({
+    origin: 'https://dtdobbs8325-source.github.io'
+}));
+
+app.use(express.json());
+
 const JSON_FILE = path.join(__dirname, 'posts.json');
+
+// ... your existing routes (/api/posts, etc.) ...
+
+// CRITICAL: Use the environment port Render assigns, fallback to 3000 locally
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+});
 
 // 1. GET ROUTE: Delivers all blog posts to the front end
 app.get('/api/posts', (req, res) => {
