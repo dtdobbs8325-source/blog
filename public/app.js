@@ -1,5 +1,5 @@
 // Checks if you are running locally; if not, points to your future Render server
-const API_URL = 'https://https://blog-righ.onrender.com/api/posts';
+const API_URL = 'https://blog-righ.onrender.com/api/posts';
 // const API_URL = '/api/posts';
 const postForm = document.getElementById('post-form');
 const blogContainer = document.getElementById('blog-container');
